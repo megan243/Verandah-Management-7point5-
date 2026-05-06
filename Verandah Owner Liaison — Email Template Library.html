@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verandah Owner Liaison — Email Template Library</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal-deep: #1f4e4a;
+    --teal: #2d7a72;
+    --teal-light: #d4e8e5;
+    --teal-bg: #f3f8f7;
+    --cream: #faf7f2;
+    --paper: #ffffff;
+    --ink: #1a2826;
+    --ink-soft: #4a5856;
+    --ink-mute: #8a948f;
+    --gold: #b8924a;
+    --gold-soft: #fbf3e3;
+    --rule: #e3dfd6;
+    --rule-soft: #ece9e1;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* MASTHEAD */
+  .masthead {
+    background: var(--teal-deep);
+    color: var(--cream);
+    padding: 48px 56px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before {
+    content: "";
+    position: absolute;
+    top: -40%; right: -10%;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(184,146,74,0.14) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .masthead-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid rgba(250,247,242,0.18);
+    padding-bottom: 14px;
+    margin-bottom: 28px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(250,247,242,0.7);
+  }
+  .masthead-top .brand { color: var(--gold); }
+  .masthead h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 54px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    max-width: 900px;
+    font-style: italic;
+  }
+  .masthead h1 em {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .masthead .subtitle {
+    margin-top: 18px;
+    max-width: 680px;
+    color: rgba(250,247,242,0.85);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .masthead .meta {
+    margin-top: 32px;
+    display: flex;
+    gap: 32px;
+    font-size: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    color: rgba(250,247,242,0.6);
+    letter-spacing: 0.05em;
+    flex-wrap: wrap;
+  }
+  .masthead .meta strong {
+    display: block;
+    color: var(--cream);
+    font-weight: 500;
+    margin-top: 2px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+  }
+
+  /* LAYOUT */
+  .layout {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  /* SIDEBAR */
+  .sidebar {
+    background: var(--paper);
+    border-right: 1px solid var(--rule);
+    padding: 36px 24px;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    height: 100vh;
+    overflow-y: auto;
+  }
+  .sidebar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-mute);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--rule-soft);
+  }
+  .nav-list { list-style: none; }
+  .nav-list li { margin-bottom: 4px; }
+  .nav-list a {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    text-decoration: none;
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+    line-height: 1.35;
+  }
+  .nav-list a:hover {
+    background: var(--teal-bg);
+    color: var(--teal-deep);
+  }
+  .nav-list .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 500;
+    padding-top: 2px;
+    flex-shrink: 0;
+    width: 18px;
+  }
+  .nav-step-label {
+    font-size: 10.5px;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--ink-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 1px;
+    font-weight: 400;
+  }
+  .nav-section {
+    margin-top: 24px;
+    padding-top: 18px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .nav-section .sidebar-label { padding-bottom: 0; border: none; margin-bottom: 12px; }
+
+  /* MAIN */
+  .main { padding: 52px 60px 120px; max-width: 1000px; }
+
+  /* INTRO */
+  .intro {
+    margin-bottom: 56px;
+  }
+  .intro h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 30px;
+    font-weight: 500;
+    color: var(--teal-deep);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .intro .lead {
+    color: var(--ink-soft);
+    font-size: 16px;
+    margin-bottom: 28px;
+    max-width: 720px;
+    line-height: 1.6;
+  }
+
+  /* JOURNEY MAP */
+  .journey {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 28px 32px;
+    margin-bottom: 40px;
+  }
+  .journey-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .journey-flow {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    align-items: stretch;
+    position: relative;
+  }
+  .journey-step {
+    text-align: center;
+    padding: 0 8px;
+    position: relative;
+  }
+  .journey-step:not(:last-child)::after {
+    content: "›";
+    position: absolute;
+    right: -8px;
+    top: 8px;
+    color: var(--gold);
+    font-size: 22px;
+    font-weight: 300;
+  }
+  .journey-step .num {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px;
+    color: var(--teal);
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 10px;
+    letter-spacing: 0.02em;
+  }
+  .journey-step .name {
+    font-size: 13px;
+    color: var(--ink);
+    font-weight: 600;
+    margin-bottom: 4px;
+    line-height: 1.3;
+  }
+  .journey-step .when {
+    font-size: 11px;
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* DOCTRINE */
+  .doctrine {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 28px 32px;
+    margin-bottom: 56px;
+    position: relative;
+  }
+  .doctrine::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gold);
+  }
+  .doctrine h3 {
+    font-family: 'Fraunces', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--teal-deep);
+    margin-bottom: 14px;
+    letter-spacing: -0.01em;
+  }
+  .doctrine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px 28px;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+  }
+  .doctrine-grid div {
+    padding: 3px 0;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+  }
+  .doctrine-grid div::before {
+    content: "—";
+    color: var(--gold);
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  /* TEMPLATE CARDS */
+  .template {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    margin-bottom: 32px;
+    overflow: hidden;
+    transition: border-color 0.2s ease;
+  }
+  .template:hover { border-color: var(--teal-light); }
+
+  .template-header {
+    padding: 28px 36px 22px;
+    border-bottom: 1px solid var(--rule-soft);
+    background: linear-gradient(180deg, rgba(212,232,229,0.18) 0%, transparent 100%);
+  }
+  .template-step {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    font-weight: 500;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .template-step .seq {
+    background: var(--gold);
+    color: var(--cream);
+    padding: 2px 8px;
+    border-radius: 2px;
+    font-size: 10px;
+  }
+  .template-title {
+    font-family: 'Fraunces', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--teal-deep);
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    margin-bottom: 10px;
+  }
+  .template-when {
+    color: var(--ink-soft);
+    font-size: 14px;
+    max-width: 700px;
+    line-height: 1.55;
+  }
+
+  /* ADVISORY BANNER (Template 01 specific) */
+  .advisory-banner {
+    background: linear-gradient(180deg, #fef4e0 0%, #fbf3e3 100%);
+    border-bottom: 1px solid #f0d9a8;
+    border-left: 4px solid var(--gold);
+    padding: 22px 36px 24px;
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 18px;
+    align-items: start;
+  }
+  .advisory-icon {
+    width: 28px;
+    height: 28px;
+    background: var(--gold);
+    color: var(--cream);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .advisory-title {
+    font-family: 'Fraunces', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: #7a5a1f;
+    margin-bottom: 8px;
+    letter-spacing: -0.005em;
+    line-height: 1.3;
+  }
+  .advisory-text {
+    font-size: 13.5px;
+    color: #5c4517;
+    line-height: 1.6;
+  }
+  .advisory-text strong {
+    color: #3d2d0d;
+    font-weight: 600;
+  }
+
+  /* PURPOSE BLOCK */
+  .purpose-block {
+    padding: 16px 36px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule-soft);
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 14px;
+    font-size: 13px;
+    align-items: baseline;
+  }
+  .purpose-block dt {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-mute);
+    font-weight: 500;
+  }
+  .purpose-block dd {
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .purpose-block dd strong {
+    color: var(--ink);
+    font-weight: 600;
+  }
+
+  /* TEMPLATE BODY */
+  .template-section { padding: 28px 36px 16px; }
+  .template-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 500;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .copy-btn {
+    background: var(--teal-deep);
+    color: var(--cream);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 3px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.15s ease;
+  }
+  .copy-btn:hover { background: var(--teal); }
+  .copy-btn.copied { background: var(--gold); }
+
+  .subject-line {
+    background: var(--cream);
+    padding: 14px 18px;
+    border-left: 3px solid var(--gold);
+    font-family: 'Inter', sans-serif;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 18px;
+  }
+  .subject-line .label-text {
+    color: var(--ink-mute);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-right: 10px;
+    font-weight: 500;
+  }
+
+  .template-body {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 3px;
+    padding: 24px 28px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--ink);
+    white-space: pre-wrap;
+    font-family: 'Inter', sans-serif;
+  }
+  .template-body .placeholder {
+    background: var(--gold-soft);
+    color: var(--gold);
+    padding: 1px 6px;
+    border-radius: 2px;
+    font-weight: 500;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+  .template-body a {
+    color: var(--teal);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* TRAINING NOTE */
+  .training-note {
+    background: linear-gradient(180deg, var(--teal-bg) 0%, rgba(212,232,229,0.4) 100%);
+    border-top: 1px solid var(--teal-light);
+    padding: 24px 36px 28px;
+    margin-top: 16px;
+  }
+  .training-note .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal-deep);
+    font-weight: 600;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .training-note .label::before {
+    content: "";
+    width: 18px;
+    height: 1px;
+    background: var(--teal-deep);
+  }
+  .training-note ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .training-note li {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+    padding-left: 20px;
+    position: relative;
+  }
+  .training-note li::before {
+    content: "›";
+    position: absolute;
+    left: 4px;
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.3;
+  }
+  .training-note li strong {
+    color: var(--teal-deep);
+    font-weight: 600;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--teal-deep);
+    color: rgba(250,247,242,0.85);
+    padding: 44px 64px;
+    font-size: 13px;
+    line-height: 1.7;
+    text-align: center;
+  }
+  footer .gold { color: var(--gold); font-weight: 500; }
+  footer .signoff {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+  footer p { max-width: 640px; margin: 0 auto; }
+  footer .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 16px auto;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 1024px) {
+    .layout { grid-template-columns: 1fr; }
+    .sidebar { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--rule); }
+    .main { padding: 40px 28px 80px; }
+    .masthead { padding: 36px 28px 32px; }
+    .masthead h1 { font-size: 36px; }
+    .doctrine-grid { grid-template-columns: 1fr; }
+    .journey-flow { grid-template-columns: 1fr 1fr; gap: 24px 16px; }
+    .journey-step:not(:last-child)::after { display: none; }
+  }
+  @media (max-width: 600px) {
+    .purpose-block { grid-template-columns: 1fr; gap: 4px; }
+    .template-title { font-size: 22px; }
+    .template-section, .template-header, .training-note { padding-left: 22px; padding-right: 22px; }
+    .journey-flow { grid-template-columns: 1fr; }
+  }
+
+  /* PRINT */
+  @media print {
+    .sidebar, .copy-btn, footer, .masthead .meta { display: none; }
+    .layout { grid-template-columns: 1fr; }
+    .template { page-break-inside: avoid; border: 1px solid #ccc; }
+    body { background: white; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MASTHEAD -->
+<header class="masthead">
+  <div class="masthead-top">
+    <span class="brand">◆ Verandah Properties, LLC</span>
+    <span>Internal · Confidential · For Liaison Use Only</span>
+  </div>
+  <h1>The Owner Liaison <em>Email Library</em></h1>
+  <p class="subtitle">Your working reference for every owner touchpoint from welcome through handoff — pre-vetted templates, ready to personalize, copy, and send.</p>
+  <div class="meta">
+    <div>Prepared for<strong>Linda · Owner Liaison</strong></div>
+    <div>Maintained by<strong>Director, Maintenance &amp; Client Experience</strong></div>
+    <div>Doctrine<strong>Verandah Core Purpose</strong></div>
+  </div>
+</header>
+
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-label">The Liaison Sequence</div>
+    <ul class="nav-list">
+      <li><a href="#t1"><span class="num">01</span><span>Welcome &amp; Onboarding<br><span class="nav-step-label">Day One</span></span></a></li>
+      <li><a href="#t2"><span class="num">02</span><span>Rently Lockbox Installation<br><span class="nav-step-label">After Form Returned</span></span></a></li>
+      <li><a href="#t3"><span class="num">03</span><span>Property Walkthrough<br><span class="nav-step-label">Rent-Ready</span></span></a></li>
+      <li><a href="#t4"><span class="num">04</span><span>Owner Portal Activation<br><span class="nav-step-label">Pre-Listing</span></span></a></li>
+      <li><a href="#t5"><span class="num">05</span><span>Handoff to Client Experience<br><span class="nav-step-label">Lease Signed</span></span></a></li>
+    </ul>
+
+    <div class="nav-section">
+      <div class="sidebar-label">Reference</div>
+      <ul class="nav-list">
+        <li><a href="#how-to"><span class="num">§</span><span>How to Use This Library</span></a></li>
+        <li><a href="#doctrine"><span class="num">§</span><span>The Verandah Doctrine</span></a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- INTRO -->
+    <section class="intro" id="how-to">
+      <h2>The five touchpoints, one workflow</h2>
+      <p class="lead">Each owner moves through the same sequence — welcome, lockbox, walkthrough, portal, handoff. The templates below are written in our voice, reviewed against our governing documents, and built to keep the owner informed without requiring you to draft from scratch each time.</p>
+
+      <div class="journey">
+        <div class="journey-label">The Owner Journey · Day One to Move-In</div>
+        <div class="journey-flow">
+          <div class="journey-step">
+            <div class="num">01</div>
+            <div class="name">Welcome</div>
+            <div class="when">Day 1</div>
+          </div>
+          <div class="journey-step">
+            <div class="num">02</div>
+            <div class="name">Lockbox</div>
+            <div class="when">Form Back</div>
+          </div>
+          <div class="journey-step">
+            <div class="num">03</div>
+            <div class="name">Walkthrough</div>
+            <div class="when">Rent-Ready</div>
+          </div>
+          <div class="journey-step">
+            <div class="num">04</div>
+            <div class="name">Portal Setup</div>
+            <div class="when">Pre-Listing</div>
+          </div>
+          <div class="journey-step">
+            <div class="num">05</div>
+            <div class="name">Handoff</div>
+            <div class="when">Lease Signed</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOCTRINE -->
+    <section class="doctrine" id="doctrine">
+      <h3>The Verandah Doctrine — your reference for tone &amp; judgment</h3>
+      <div class="doctrine-grid">
+        <div>Proactive, not reactive management</div>
+        <div>Asset quality attracts tenant quality</div>
+        <div>Process consistency builds trust</div>
+        <div>We educate; we do not assume ownership</div>
+        <div>We maintain professional boundaries</div>
+        <div>We protect the brand and each other</div>
+        <div>We operate with integrity and documentation</div>
+        <div>We increase probability of strong outcomes through structure</div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TEMPLATE 1: WELCOME & ONBOARDING -->
+    <!-- ============================================== -->
+    <article class="template" id="t1">
+      <div class="template-header">
+        <div class="template-step"><span class="seq">01</span> Welcome &amp; Onboarding · Day One</div>
+        <h3 class="template-title">Welcome &amp; Onboarding Form</h3>
+        <p class="template-when">Send within one business day of the executed PMA. Introduces Linda as the owner's single point of contact and requests the New Client Onboarding form via Jotform — the front-end data we need to market the property accurately.</p>
+      </div>
+
+      <div class="advisory-banner">
+        <div class="advisory-icon">!</div>
+        <div class="advisory-body">
+          <div class="advisory-title">This is a shell, not a template — personalize before sending</div>
+          <div class="advisory-text">The first email sets the tone for the entire relationship and must not read as a form letter. Use the structure below as a foundation, then add specifics about the owner, the property, and any context from Pamela's intake conversation. Reference something only this owner would recognize — their reason for renting it out, a detail about the home, a moment from their conversation with Pamela. The shell handles the logistics; <strong>you handle the relationship.</strong></div>
+        </div>
+      </div>
+
+      <dl class="purpose-block">
+        <dt>Purpose</dt>
+        <dd>Establish liaison ownership of the relationship, request onboarding form, set expectation for the next step (Rently install).</dd>
+        <dt>Trigger</dt>
+        <dd>PMA signed by owner.</dd>
+        <dt>Next Step</dt>
+        <dd><strong>Template 02 — Rently Lockbox Installation</strong> once the Jotform is returned.</dd>
+      </dl>
+
+      <div class="template-section">
+        <div class="template-label">
+          <span>Email Shell — Personalize Before Sending</span>
+          <button class="copy-btn" data-copy-target="tpl-1">Copy Shell</button>
+        </div>
+        <div class="subject-line"><span class="label-text">Subject</span>Welcome to Verandah — Next step for <span class="placeholder">[Property Address]</span></div>
+        <div class="template-body" id="tpl-1">Hi <span class="placeholder">[Owner First Name]</span>,
+
+I wanted to reach out personally and say welcome. I'm Linda, and I'll be your direct point of contact here at Verandah from today through the placement of your tenant. Anything that lands outside my lane, I route to the right person on our team — you won't have to figure out who to call.
+
+To get <span class="placeholder">[Property Address]</span> moving, I need one thing from you: our New Client Onboarding form. It captures the property details, access information, and preferences our team needs to market the home accurately and prepare it for showings.
+
+👉 <a href="https://www.jotform.com/assign/242316144412041/R05YcmN3MkFFbzJkT2R0VDhwc2xzQ2J4YTk2dytDcmZPNkdsS2R1S2ZRMnY2eDJaYUgwUHAxZjRPY1pWU2cxMCtXYVRWdFBJVEdFTktsRGx3dldCb1cwdnZISWozSGhGWGhBeEhPYWdHTDZvYW03dUhxZnU5bW9BZG45djZhYko=">Pre-Management Onboarding Form</a>
+
+It takes most owners about 15–20 minutes. You can save your progress and come back to it if anything requires you to dig up a detail — no need to finish in one sitting.
+
+Once your form is in, my next step is to coordinate installation of the Rently self-showing lockbox at the property. That's what allows pre-screened, credit-verified prospects to tour the home, and it's how we generate the showing volume that leads to a strong placement. I'll handle the scheduling and walk you through what to expect before anything is installed.
+
+If anything comes up before then — a question about the form, something Pamela mentioned you wanted to revisit, or just wanting to put a voice to the name — please reach out. There are no small questions on the front end of this; I'd rather answer ten now than have you wondering about one later.
+
+Warmly,
+Linda <span class="placeholder">[Last Name]</span>
+Owner Liaison
+Verandah Properties, LLC</div>
+      </div>
+
+      <div class="training-note">
+        <div class="label">Liaison Note</div>
+        <ul>
+          <li><strong>Personalization is required, not optional.</strong> Pamela's expectation: this email must never read as a form letter. Before sending, weave in something specific to this owner — a reference to their reason for renting, a detail about the home, something Pamela mentioned during intake, or a connection point from your first conversation. The shell handles structure; you handle the relationship.</li>
+          <li><strong>Tone anchor:</strong> Warm, confident, single-point-of-contact. We are setting expectation that Linda owns this phase end-to-end.</li>
+          <li><strong>Watch for:</strong> If the owner replies asking who to contact for general management questions <em>during</em> onboarding, redirect them back to Linda — Megan and Rain do not engage until handoff (Template 05).</li>
+          <li><strong>Log to LeadSimple</strong> after sending. If form not returned in 5 business days, follow up with a brief, friendly nudge — never let it drift silently.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ============================================== -->
+    <!-- TEMPLATE 2: RENTLY LOCKBOX INSTALLATION -->
+    <!-- ============================================== -->
+    <article class="template" id="t2">
+      <div class="template-header">
+        <div class="template-step"><span class="seq">02</span> Rently Lockbox Installation · After Form Returned</div>
+        <h3 class="template-title">Rently Lockbox Installation</h3>
+        <p class="template-when">Send the same day the Jotform is received. Confirms onboarding is complete, prepares the owner for vendor visit, and addresses the most common owner anxiety — "who has access to my house?" — proactively.</p>
+      </div>
+
+      <dl class="purpose-block">
+        <dt>Purpose</dt>
+        <dd>Prep owner for lockbox install, neutralize access-anxiety up front, set expectation that owner controls when the key is placed and showings begin.</dd>
+        <dt>Trigger</dt>
+        <dd>Jotform onboarding form returned.</dd>
+        <dt>Next Step</dt>
+        <dd><strong>Template 03 — Property Walkthrough</strong> once owner confirms key is placed.</dd>
+      </dl>
+
+      <div class="template-section">
+        <div class="template-label">
+          <span>Email Body</span>
+          <button class="copy-btn" data-copy-target="tpl-2">Copy Template</button>
+        </div>
+        <div class="subject-line"><span class="label-text">Subject</span>Next up for <span class="placeholder">[Property Address]</span> — Rently lockbox install</div>
+        <div class="template-body" id="tpl-2">Hi <span class="placeholder">[Owner First Name]</span>,
+
+Thanks so much for getting your onboarding form back to us — it's in, and our team is already moving forward on prepping <span class="placeholder">[Property Address]</span> for market. That was the biggest item on my list from you, so well done.
+
+The next step on our side is installing the Rently self-showing lockbox at the property. A vendor from our network will be heading out in the next few days to mount it. A few things I want you to know up front so nothing about this feels surprising:
+
+The lockbox arrives empty. This is the part owners most often want reassurance on, and rightly so. When it's installed, there is no key inside — which means nobody can access the property through it. Not the vendor, not our team, not anyone. The lockbox simply sits on the door, ready, until you decide to place the key.
+
+You do not need to be home for the installation. The vendor handles it independently and will let me know once it's mounted.
+
+There's no rush on the key. Once the box is up, it will quietly wait at the property. Place the key when you're ready — same day, next week, whenever works for you. Showings cannot begin until you do, but you control that timing.
+
+Here's the owner guide for reference:
+👉 <a href="https://pamela-lgtm.github.io/Rently-Lockbox-Access-for-New-Clients-or-Current-Owners/">Rently Lockbox Owner Guide</a>
+
+It walks through how the box works, how Rently verifies prospects with credit card authorization, and how we receive real-time notifications every time someone tours the home.
+
+A few flexible options for placing the key:
+
+  •  You can place it yourself whenever it's convenient.
+  •  A friend, family member, or neighbor can place it on your behalf — just send me their name and cell number and I'll register them with Rently so they have access for that one task.
+  •  If you'd prefer a different arrangement, just let me know and we'll work it out.
+
+One final ask: Once the key is in the box, please send me a quick email or text confirming it's placed. That written confirmation is what triggers our team to run a test access on our end and officially open the property for showings. We don't want to assume — we want you to tell us we're cleared to go.
+
+Reach out anytime if any of this raises questions. Happy to walk through it by phone if that's easier.
+
+Talk soon,
+Linda <span class="placeholder">[Last Name]</span>
+Owner Liaison
+Verandah Properties, LLC</div>
+      </div>
+
+      <div class="training-note">
+        <div class="label">Liaison Note</div>
+        <ul>
+          <li><strong>The "empty box" beat is non-negotiable.</strong> Most owner pushback at this stage stems from access anxiety. Lead with reassurance, then logistics — never the reverse.</li>
+          <li><strong>Documentation matters:</strong> The written confirmation that the key is placed is what authorizes us to open showings. Verbal confirmation is not sufficient — get it in writing every time.</li>
+          <li><strong>Authority reference:</strong> PMA Section 4(a) authorizes the Rently lockbox installation as part of our standard advertising and self-showing process.</li>
+          <li><strong>If the owner refuses self-showing:</strong> Escalate to Megan. Do not negotiate alternative showing structures unilaterally.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ============================================== -->
+    <!-- TEMPLATE 3: PROPERTY WALKTHROUGH -->
+    <!-- ============================================== -->
+    <article class="template" id="t3">
+      <div class="template-header">
+        <div class="template-step"><span class="seq">03</span> Property Walkthrough · Rent-Ready</div>
+        <h3 class="template-title">Property Walkthrough Scheduling</h3>
+        <p class="template-when">Send once the property is rent-ready or shortly before. Schedules the on-site capture of appliances, fixtures, finishes, and condition baseline — all loaded to the AppFolio Property Page.</p>
+      </div>
+
+      <dl class="purpose-block">
+        <dt>Purpose</dt>
+        <dd>Schedule walkthrough, set time expectation (30–45 min), establish the AppFolio Property Page as the source of truth for listing, scoping, and turnover.</dd>
+        <dt>Trigger</dt>
+        <dd>Property reaches rent-ready status (or imminent).</dd>
+        <dt>Next Step</dt>
+        <dd><strong>Template 04 — Owner Portal Activation</strong> as listing prep concludes.</dd>
+      </dl>
+
+      <div class="template-section">
+        <div class="template-label">
+          <span>Email Body</span>
+          <button class="copy-btn" data-copy-target="tpl-3">Copy Template</button>
+        </div>
+        <div class="subject-line"><span class="label-text">Subject</span>Scheduling the property walkthrough at <span class="placeholder">[Property Address]</span></div>
+        <div class="template-body" id="tpl-3">Hi <span class="placeholder">[Owner First Name]</span>,
+
+The next step in getting <span class="placeholder">[Property Address]</span> fully prepped for market is a quick on-site walkthrough.
+
+Here's what I'm capturing while I'm there: Appliances (make, model, condition), fixtures, flooring, finishes, and any feature worth highlighting. All of it gets loaded into your AppFolio Property Page, which becomes the source of truth for your listing, future maintenance scoping, and turnover comparisons down the road. Getting this right up front saves a lot of guesswork later.
+
+Time on site: Roughly 30–45 minutes — sometimes a touch less if the home is straightforward.
+
+Ideal timing: Once the property is rent-ready, or shortly before. I want to document the home as future tenants will see it.
+
+Now for the easy part — when works for you? I'm happy to flex around your schedule. If you can send me two or three time windows that work over the next <span class="placeholder">[insert relevant timeframe — e.g., "week or so"]</span>, I'll lock one in and confirm back. Mornings, afternoons, weekdays, end-of-day — whatever fits.
+
+A couple of quick logistics depending on the property's status:
+
+  •  If the property is currently occupied: Please give your tenant the customary written notice (Florida requires at least 12 hours for non-emergency entry, and we recommend 24 for courtesy). Just let me know once that's been sent so we can confirm the time.
+  •  If the property is vacant: I'll just need the Rently lockbox to be active with your key placed. If we're already there, we're good to go.
+
+Let me know what works and we'll get this on the calendar.
+
+Talk soon,
+Linda <span class="placeholder">[Last Name]</span>
+Owner Liaison
+Verandah Properties, LLC</div>
+      </div>
+
+      <div class="training-note">
+        <div class="label">Liaison Note</div>
+        <ul>
+          <li><strong>This is a Lake Nona / in-region template.</strong> If the property is outside Linda's geographic range, route walkthrough scheduling to the appropriate field staff and update the email to reflect who will be on-site.</li>
+          <li><strong>Florida statute reference:</strong> Fla. Stat. § 83.53 requires reasonable notice for landlord entry — minimum 12 hours; 24 hours is our courtesy standard. Never instruct a walkthrough without confirming notice has been served if occupied.</li>
+          <li><strong>The AppFolio Property Page framing matters.</strong> We want owners to understand this is documentation infrastructure — not a casual look-around. It justifies the time on-site and signals professionalism.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ============================================== -->
+    <!-- TEMPLATE 4: OWNER PORTAL ACTIVATION -->
+    <!-- ============================================== -->
+    <article class="template" id="t4">
+      <div class="template-header">
+        <div class="template-step"><span class="seq">04</span> Owner Portal Activation · Pre-Listing</div>
+        <h3 class="template-title">AppFolio Owner Portal Activation</h3>
+        <p class="template-when">Send the same day the AppFolio activation email is dispatched. Sets up the financial-transparency relationship and pre-empts the two most common owner confusions: 2FA setup and the "empty dashboard."</p>
+      </div>
+
+      <dl class="purpose-block">
+        <dt>Purpose</dt>
+        <dd>Activate owner portal, set expectation for statement cadence, pre-empt 2FA and empty-dashboard confusion, signal the upcoming handoff to Client Experience.</dd>
+        <dt>Trigger</dt>
+        <dd>AppFolio activation email sent to owner.</dd>
+        <dt>Next Step</dt>
+        <dd><strong>Template 05 — Handoff to Client Experience</strong> once lease is signed.</dd>
+      </dl>
+
+      <div class="template-section">
+        <div class="template-label">
+          <span>Email Body</span>
+          <button class="copy-btn" data-copy-target="tpl-4">Copy Template</button>
+        </div>
+        <div class="subject-line"><span class="label-text">Subject</span>Your Verandah Owner Portal — quick setup note</div>
+        <div class="template-body" id="tpl-4">Hi <span class="placeholder">[Owner First Name]</span>,
+
+Quick one — keep an eye on your inbox today for an activation email from AppFolio. That's our property management system, and it's how you'll have direct, real-time visibility into everything financial on <span class="placeholder">[Property Address]</span>.
+
+What lives inside your portal:
+
+  •  Two owner statements per month — one mid-month, one at month-end. Detailed, itemized, and downloadable.
+  •  Your year-end 1099 — issued through the portal each January.
+  •  Shared documents — your management agreement, lease (once executed), inspection reports, and other key paperwork all in one place.
+  •  Real-time visibility — every rent payment received, every expense paid on your behalf, every disbursement to you. You'll see it the moment it posts, not 30 days later on a paper statement.
+
+This is the start of the financial transparency piece of our relationship, and I want you set up cleanly so it works for you from day one.
+
+Here's the setup guide:
+👉 <a href="https://pamela-lgtm.github.io/Owner-Portal-Onboarding---New-Client-Onboarding/">Owner Portal Setup Guide</a>
+
+Two things worth flagging before you log in:
+
+1. Two-factor authentication is required. AppFolio retired email-based 2FA, so you'll need to set it up using either SMS text or automated phone call to the number you provide. It's a one-time setup and takes about a minute. If you don't have your phone handy when you're activating, just come back to it later — the activation link stays valid.
+
+2. Your dashboard will look empty at first, and that's completely normal. Until your property is leased and rent starts flowing, there's nothing to display. So if you log in and see a quiet screen, nothing has gone wrong — it just means we're still in the lead-up phase. Once a lease is signed and the first rent payment posts, the dashboard fills in quickly.
+
+If you hit any snags during setup, just say the word. I'm happy to do a quick five-minute phone walkthrough with you to get past any sticking points — most setup questions are faster to solve by voice than by email tag.
+
+One last note for the future: Once your lease is signed and the property is leased up, ongoing portal questions (statement details, disbursement timing, document access) will route to our Client Experience team rather than to me. They live in AppFolio every day and will be the fastest, most accurate source on those topics. Until then, I'm your person — send anything my way.
+
+Talk soon,
+Linda <span class="placeholder">[Last Name]</span>
+Owner Liaison
+Verandah Properties, LLC</div>
+      </div>
+
+      <div class="training-note">
+        <div class="label">Liaison Note</div>
+        <ul>
+          <li><strong>The handoff foreshadow at the end matters.</strong> Setting expectation now — that ongoing portal questions will route to Client Experience — makes Template 05 land cleanly later, instead of feeling like a sudden change.</li>
+          <li><strong>Most common follow-up:</strong> Owner can't complete 2FA. Offer the five-minute phone walkthrough — never make them troubleshoot alone via email.</li>
+          <li><strong>Reference authority:</strong> PMA Section 4(o) — Owner Statements; PMA Section 4(p) — Owner Distribution. Statement cadence and disbursement language tracks directly to the agreement.</li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- ============================================== -->
+    <!-- TEMPLATE 5: HANDOFF TO CLIENT EXPERIENCE -->
+    <!-- ============================================== -->
+    <article class="template" id="t5">
+      <div class="template-header">
+        <div class="template-step"><span class="seq">05</span> Handoff to Client Experience · Lease Signed</div>
+        <h3 class="template-title">Handoff to Megan &amp; Rain</h3>
+        <p class="template-when">Send once the lease is fully executed and move-in is scheduled. Closes Linda's phase of the relationship, formally introduces Megan and Rain, and sets the 30-day expectations from move-in through first disbursement.</p>
+      </div>
+
+      <dl class="purpose-block">
+        <dt>Purpose</dt>
+        <dd>Close placement phase warmly, introduce ongoing team, set expectations for inspection / first rent / first disbursement / first statement, redirect future correspondence to clientexperience@verandahproperties.com.</dd>
+        <dt>Trigger</dt>
+        <dd>Lease executed, move-in date confirmed.</dd>
+        <dt>Next Step</dt>
+        <dd>Linda remains briefly available for transition questions only. All operational matters route to Client Experience.</dd>
+      </dl>
+
+      <div class="template-section">
+        <div class="template-label">
+          <span>Email Body</span>
+          <button class="copy-btn" data-copy-target="tpl-5">Copy Template</button>
+        </div>
+        <div class="subject-line"><span class="label-text">Subject</span><span class="placeholder">[Property Address]</span> — Lease signed &amp; your handoff to our Client Experience team</div>
+        <div class="template-body" id="tpl-5">Hi <span class="placeholder">[Owner First Name]</span>,
+
+We did it. The lease for <span class="placeholder">[Property Address]</span> is officially signed, and move-in is scheduled on <span class="placeholder">[Move-In Date]</span>.
+
+I wanted to take a moment before handing the baton to mark this properly, because it's a real milestone — not just for the property, but for the work that went into getting here.
+
+When we started, this was a property with potential and a list of unknowns. Together, we got the onboarding form completed, the lockbox installed, the walkthrough done, the listing live, and the right applicant approved. <span class="placeholder">[Optional personalization line — e.g., "I know the wait through the first round of showings tested patience, and I appreciated your steadiness through it," or "You made the rent-ready decisions quickly and it showed in the speed of the placement."]</span> That's the kind of partnership that produces strong placements, and it's the reason we're here today.
+
+Now, the handoff.
+
+From this point forward, your day-to-day relationship transitions to our Client Experience team — and you're in excellent hands.
+
+Megan Fairchild — Director of Maintenance and Client Experience
+Megan oversees the operational side of your relationship with Verandah end-to-end. She's the senior voice on anything strategic: rent positioning at renewal, larger maintenance decisions, lease questions, and anything where you want a director-level conversation.
+
+Rain Garcia — Client Experience Manager
+Rain is your day-to-day point of contact for everything operational. Maintenance requests, statement questions, contributions, banking details, routine updates — Rain is the one driving these forward and keeping you informed.
+
+Your new email address for everything ongoing:
+👉 clientexperience@verandahproperties.com
+
+This single address routes to both Megan and Rain so nothing falls through the cracks if one of them is out of office. Statements, contributions, maintenance, banking changes, lease questions, anything operational — it all goes here.
+
+What to expect over the next 30 days, so nothing surprises you:
+
+  •  Move-in inspection — Completed at or shortly after move-in. The condition report becomes part of your AppFolio Property Page and is the baseline reference for the eventual move-out.
+  •  First rent collection — Rent is due on the 1st of each month. Once received and cleared, the funds move into the disbursement pipeline.
+  •  First owner disbursement — Per our standard cadence, your first disbursement will hit your account on or around the 8th of the month, reflecting first month's rent net of leasing fee and any standard onboarding deductions. Your owner statement will detail every line.
+  •  First owner statement — Your first statement posts to the Owner Portal mid-month, with a second following at month-end. The portal will start to fill in real-time from this point on.
+
+If anything in that sequence raises a question as it's happening, route it to clientexperience@verandahproperties.com and Megan or Rain will get you a clear answer.
+
+One last note from me: I'll remain available through the immediate transition for any lingering onboarding questions — meaning anything related to the work we did together to get here. For everything that happens from move-in forward, please send it to the Client Experience inbox so the right person sees it first time.
+
+Thank you, sincerely, for the trust you placed in us. Choosing a property manager is not a small decision, and I don't take it lightly that you chose Verandah. We're going to take excellent care of <span class="placeholder">[Property Address]</span> and of you.
+
+Congratulations again — this is a great moment.
+
+Warmly,
+Linda <span class="placeholder">[Last Name]</span>
+Owner Liaison
+Verandah Properties, LLC</div>
+      </div>
+
+      <div class="training-note">
+        <div class="label">Liaison Note</div>
+        <ul>
+          <li><strong>This email closes the relationship phase you own.</strong> The warmth of the close is intentional — owners remember how onboarding ends, and a strong handoff sets Megan and Rain up to inherit a settled, confident client.</li>
+          <li><strong>Hard boundary after this point:</strong> Operational questions (maintenance, statements, banking, renewal, lease) belong to Client Experience. If an owner emails you directly post-handoff, reply briefly and route to clientexperience@verandahproperties.com — do not handle it yourself, even if you know the answer. Process consistency builds trust.</li>
+          <li><strong>Personalization line is optional but encouraged.</strong> Reference one specific moment from the placement journey. Generic warmth reads as form-letter; specific warmth reads as relationship.</li>
+          <li><strong>Coordination required:</strong> CC or BCC Megan and Rain on send so they have the handoff in writing and can review the owner's history before the first inbound message arrives.</li>
+        </ul>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="signoff">The Sign of Excellence in Success Management.</div>
+  <div class="divider"></div>
+  <p>This library is an internal working tool for the Verandah owner liaison process. Templates are reviewed against the PMA, lease, and Florida statute. Personalize the bracketed fields; do not alter authority language. When in doubt, escalate.</p>
+  <p style="margin-top: 18px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(250,247,242,0.5);"><span class="gold">◆</span> Verandah Properties, LLC · 4767 New Broad Street, Orlando FL 32814 · (407) 855-0331</p>
+</footer>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach(btn => {
+    btn.addEventListener('click', async () => {
+      const target = document.getElementById(btn.dataset.copyTarget);
+      if (!target) return;
+
+      // Get plain text content, preserving line breaks
+      const text = target.innerText || target.textContent;
+
+      try {
+        await navigator.clipboard.writeText(text);
+        const original = btn.textContent;
+        btn.textContent = '✓ Copied';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = original;
+          btn.classList.remove('copied');
+        }, 2000);
+      } catch (err) {
+        // Fallback for older browsers
+        const range = document.createRange();
+        range.selectNode(target);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        try {
+          document.execCommand('copy');
+          window.getSelection().removeAllRanges();
+          btn.textContent = '✓ Copied';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = 'Copy Template';
+            btn.classList.remove('copied');
+          }, 2000);
+        } catch (e) {
+          btn.textContent = 'Copy failed';
+        }
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
